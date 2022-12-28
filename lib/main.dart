@@ -36,11 +36,10 @@ class _homePageState extends State<homePage> {
   static var imgDetail = ["Fast Food"];
   static var index=0;
   static var uiDetail=<Widget>[
-    SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
+     Column(
+          // mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
+              Container(
               height: 30,
               margin: EdgeInsets.only(top: 10, bottom: 10),
               child: ListTile(
@@ -125,176 +124,105 @@ class _homePageState extends State<homePage> {
                 itemCount: 8,
               ),
             ),
-            Column(
-              children: [
-                Container(
-                  height: 30,
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: ListTile(
-                    title: Text(
-                      "Hot Deals",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    trailing: InkWell(
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "View all",
-                            style: TextStyle(
+      
+         
+            SizedBox(
+              height: 300*5,
+              child: ListView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                itemBuilder:(context, index) {
+                return    Column(
+                      children: [
+                        Container(
+                          height: 30,
+                          margin: EdgeInsets.only(top: 10, bottom: 10),
+                          child: ListTile(
+                            title: Text(
+                              "Hot Deals",
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                color: Colors.green),
-                          ),
-                          Icon(Icons.chevron_right, color: Colors.green),
-                        ],
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  height: 230,
-
-                  // color: Colors.amber,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 158,
-                              margin: EdgeInsets.only(
-                                  top: 8, bottom: 20, left: 8, right: 8),
-                              child: Card(
-                                elevation: 7,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Container(
-                                  width: 158,
-                                  child: Image.asset(imgList[0]),
-                                ),
                               ),
                             ),
-                            Text(
-                              "HamBurger",
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            trailing: InkWell(
+                              child: Row(
+                                // mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    "View all",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green),
+                                  ),
+                                  Icon(Icons.chevron_right, color: Colors.green),
+                                ],
+                              ),
+                              onTap: () {},
                             ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.attach_money_outlined,
-                                ),
-                                Text(
-                                  "25.00",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontStyle: FontStyle.italic),
-                                ),
-                              ],
-                            )
-                          ],
+                          ),
                         ),
-                        onTap: () {},
-                      );
-                    },
-                    itemCount: 5,
-                  ),
-                ),
-              ],
+                        Container(
+                          margin: EdgeInsets.only(top: 15),
+                          height: 230,
+        
+                          // color: Colors.amber,
+                          child: ListView.builder(
+                            scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) {
+                              return InkWell(
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      height: 158,
+                                      margin: EdgeInsets.only(
+                                          top: 8, bottom: 20, left: 8, right: 8),
+                                      child: Card(
+                                        elevation: 7,
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(15)),
+                                        child: Container(
+                                          width: 158,
+                                          child: Image.asset(imgList[0]),
+                                        ),
+                                      ),
+                                    ),
+                                    Text(
+                                      "HamBurger",
+                                      style: TextStyle(
+                                          fontSize: 15, fontWeight: FontWeight.bold),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.attach_money_outlined,
+                                        ),
+                                        Text(
+                                          "25.00",
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontStyle: FontStyle.italic),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                onTap: () {},
+                              );
+                            },
+                            itemCount: 5,
+                          ),
+                        ),
+                      ],
+                    )
+                  ;
+                  
+              }, 
+              itemCount: 20,
+              ),
             ),
-            Column(
-              children: [
-                Container(
-                  height: 30,
-                  margin: EdgeInsets.only(top: 10, bottom: 10),
-                  child: ListTile(
-                    title: Text(
-                      "Hot Deals",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    trailing: InkWell(
-                      child: Row(
-                        // mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            "View all",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                color: Colors.green),
-                          ),
-                          Icon(Icons.chevron_right, color: Colors.green),
-                        ],
-                      ),
-                      onTap: () {},
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 15),
-                  height: 230,
-
-                  // color: Colors.amber,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return InkWell(
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 158,
-                              margin: EdgeInsets.only(
-                                  top: 8, bottom: 20, left: 8, right: 8),
-                              child: Card(
-                                elevation: 7,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)),
-                                child: Container(
-                                  width: 158,
-                                  child: Image.asset(imgList[0]),
-                                ),
-                              ),
-                            ),
-                            Text(
-                              "HamBurger",
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
-                            ),
-                            Row(
-                              children: [
-                                Icon(
-                                  Icons.attach_money_outlined,
-                                ),
-                                Text(
-                                  "25.00",
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontStyle: FontStyle.italic),
-                                ),
-                              ],
-                            )
-                          ],
-                        ),
-                        onTap: () {},
-                      );
-                    },
-                    itemCount: 5,
-                  ),
-                ),
-              ],
-            )
           ],
         ),
-      ),
-   
+    
   Center(
       child: Text("Cart"),
   ),
@@ -303,7 +231,8 @@ class _homePageState extends State<homePage> {
   ),
   Center(
       child: Text("Profile"),
-  ),Center(
+  ),
+  Center(
       child: Text("Settings"),
   )];
   @override
@@ -384,7 +313,9 @@ class _homePageState extends State<homePage> {
           ],
         ),
       ),
-      body:uiDetail[index],
+      body: SingleChildScrollView(
+        child: uiDetail[index],
+          ),
        );
   }
 }
